@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Time.frameCount % 3 == 0)
         {
-            _wizardInputManager = GetWizardInputs();
+            //_wizardInputManager = GetWizardInputs();
             _ghostInputManager = GetGhostInputs();
         }
 
@@ -110,22 +110,22 @@ public class PauseMenu : MonoBehaviour
         return _ghostInputManager;
     }
 
-    private MyInputManager GetWizardInputs()
-    {
-        if (!_wizardInputManager)
-        {
-            GameObject wizardObj = GameObject.FindGameObjectWithTag("ActiveWizard");
-            MyInputManager inputManager = null;
-            if (wizardObj)
-            {
-                inputManager = wizardObj.GetComponent<MyInputManager>();
-            }
+    //private MyInputManager GetWizardInputs()
+    //{
+    //    if (!_wizardInputManager)
+    //    {
+    //        GameObject wizardObj = GameObject.FindGameObjectWithTag("ActiveWizard");
+    //        MyInputManager inputManager = null;
+    //        if (wizardObj)
+    //        {
+    //            inputManager = wizardObj.GetComponent<MyInputManager>();
+    //        }
 
-            return inputManager;
-        }
+    //        return inputManager;
+    //    }
 
-        return _wizardInputManager;
-    }
+    //    return _wizardInputManager;
+    //}
 
     public void PauseGame(MyInputManager myInputManager, bool isGhost)
     {
