@@ -5439,6 +5439,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5281623093590070048, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 51.9
+      objectReference: {fileID: 0}
     - target: {fileID: 5828659329681152927, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_Name
       value: PickPlayerCanvas
@@ -5770,6 +5774,10 @@ PrefabInstance:
     - target: {fileID: 3271736018622719918, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3442988561338938559, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 39.75293
       objectReference: {fileID: 0}
     - target: {fileID: 3499786575389352194, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
       propertyPath: m_AnchorMax.y
