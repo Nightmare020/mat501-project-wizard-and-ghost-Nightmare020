@@ -106,7 +106,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Die()
     {
-        if (GetOtherPlayer().GetComponent<PlayerManager>().isDead)
+        if (GetOtherPlayer() != null && GetOtherPlayer().GetComponent<PlayerManager>().isDead)
         {
             //game over
             if (_arcadeManager)
@@ -126,7 +126,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Die(Vector2 pos)
     {
-        if (GetOtherPlayer().GetComponent<PlayerManager>().isDead)
+        if (GetOtherPlayer() != null && GetOtherPlayer().GetComponent<PlayerManager>().isDead)
         {
             //game over
             if (_arcadeManager)

@@ -1666,11 +1666,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -7661190978914246283, guid: d3de9ef5c28d4eb4bbb05104040d03a0, type: 3}
   m_PrefabInstance: {fileID: 647071570}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &575003970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8247115476896266706, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+  m_PrefabInstance: {fileID: 2868455271984291221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &589229982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3537775897489853637, guid: faff8d7a2fea3614183e94bd4ea13ab8, type: 3}
   m_PrefabInstance: {fileID: 150404109}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &596287610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4627498730102771751, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+  m_PrefabInstance: {fileID: 2868455271984291221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &647071570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5535,6 +5557,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8019449124394261837, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: promptText
+      value: 
+      objectReference: {fileID: 575003970}
+    - target: {fileID: 8019449124394261837, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: playerImage
+      value: 
+      objectReference: {fileID: 596287610}
+    - target: {fileID: 8019449124394261837, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: playerCountText
+      value: 
+      objectReference: {fileID: 575003970}
     - target: {fileID: 8019449124394261837, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: playerImages.Array.size
       value: 1

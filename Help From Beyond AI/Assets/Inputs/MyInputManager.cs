@@ -125,6 +125,38 @@ public class MyInputManager : MonoBehaviour
         }
     }
 
+    public bool AnyInputDetected()
+    {
+        // Check if any Wizard input action was performed
+        //if (wizard_Move.WasPerformedThisFrame() || wizard_Jump.WasPerformedThisFrame() ||
+        //    wizard_Dash.WasPerformedThisFrame() || wizard_Shoot.WasPerformedThisFrame() ||
+        //    wizard_Aim.WasPerformedThisFrame() || wizard_Pause.WasPerformedThisFrame() ||
+        //    wizard_Interact.WasPerformedThisFrame())
+        //{
+        //    return true;
+        //}
+
+        // Check if any Ghost input action was performed
+        if (ghost_Move.WasPerformedThisFrame() || ghost_Aim.WasPerformedThisFrame() ||
+            ghost_Interact.WasPerformedThisFrame() || ghost_SetTrampoline.WasPerformedThisFrame() ||
+            ghost_Pause.WasPerformedThisFrame())
+        {
+            return true;
+        }
+
+        // Check if any UI Navigation input action was performed
+        if (navigation_Up.WasPerformedThisFrame() || navigation_Down.WasPerformedThisFrame() ||
+            navigation_Left.WasPerformedThisFrame() || navigation_Right.WasPerformedThisFrame() ||
+            navigation_Select.WasPerformedThisFrame() || navigation_Return.WasPerformedThisFrame() ||
+            navigation_Pause.WasPerformedThisFrame())
+        {
+            return true;
+        }
+
+        // No input detected
+        return false;
+    }
+
     #region UI Navigation
 
     public bool NavigationSelect()
