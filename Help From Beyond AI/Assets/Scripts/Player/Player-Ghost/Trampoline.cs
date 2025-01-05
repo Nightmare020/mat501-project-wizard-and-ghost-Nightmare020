@@ -68,7 +68,7 @@ public class Trampoline : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (Vector2.Distance(_bullet.transform.position, transform.position) < minBulletDist)
+        if (_bullet != null && Vector2.Distance(_bullet.transform.position, transform.position) < minBulletDist)
         {
             Vector2 dir = (transform.position - _bullet.transform.position).normalized;
             _bullet.Bounce(dir, tNormal);
@@ -137,7 +137,12 @@ public class Trampoline : MonoBehaviour
 
     private void InitComponents()
     {
-        _bullet = GameObject.FindWithTag("ActiveWizard").GetComponentInChildren<WizardShooter>()._bullet;
+        GameObject wizard = GameObject.FindWithTag("ActiveWizard");
+        if (wizard != null)
+        {
+            _bullet = GameObject.FindWithTag("ActiveWizard").GetComponentInChildren<WizardShooter>()._bullet;
+        }
+        
         _stopwatch = gameObject.AddComponent<MyStopwatch>();
         _stopwatch.StartStopwatch();
         _spriteRendererSmall.color = Color.white;
