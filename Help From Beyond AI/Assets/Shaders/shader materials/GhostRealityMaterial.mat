@@ -124,5 +124,5 @@ Material:
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
-    - _pos: {r: -26.905403, g: -0.5902714, b: 0, a: 0}
+    - _pos: {r: -19.384562, g: 3.2162976, b: 0, a: 0}
   m_BuildTextureStacks: []
