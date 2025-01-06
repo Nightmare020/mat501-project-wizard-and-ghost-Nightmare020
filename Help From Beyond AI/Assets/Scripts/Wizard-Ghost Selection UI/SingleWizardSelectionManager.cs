@@ -11,8 +11,7 @@ public class SingleWizardSelectionManager : MonoBehaviour
     private MyInputManager playerInputManager;
     private PlayerManager playerManager;
     private CanvasGroup _canvasGroup;
-    private int countPlayer = 0;
-    [SerializeField] private TMP_Text playerCountText;
+    [SerializeField] private TMP_Text startText;
     [SerializeField] private Image playerImage;
     //[SerializeField] private Transform wizardX, ghostX;
 
@@ -64,8 +63,7 @@ public class SingleWizardSelectionManager : MonoBehaviour
         playerInputManager = inputManager;
         playerManager = inputManager.transform.GetComponent<PlayerManager>();
         playerImage.color = Color.green;
-        countPlayer = 1;
-        SetPlayerCountText();
+        startText.text = "START TRAINING!";
 
         //update the player count
         //SetPlayerCountText();
@@ -93,8 +91,6 @@ public class SingleWizardSelectionManager : MonoBehaviour
         playerInputManager = null;
         playerManager = null;
         playerImage.color = Color.white;
-        countPlayer = 0;
-        SetPlayerCountText();
 
         //    //update the player count
         //    ShowUI();
@@ -102,17 +98,17 @@ public class SingleWizardSelectionManager : MonoBehaviour
         //    UpdateAcceptImage();
     }
 
-    private void SetPlayerCountText()
-    {
-        playerCountText.text = countPlayer + $"/1";
-    }
+    //private void SetPlayerCountText()
+    //{
+    //    playerCountText.text = countPlayer + $"/1";
+    //}
 
     #region player inputs
 
     public void PlayerAccept()
     {
         // Ensure a player is connected
-        if (inputEnabled && countPlayer == 1)
+        if (inputEnabled)
         {
             // Set players as ghost
             playerInputManager.SetInputMap(CurrentInputState.Wizard);

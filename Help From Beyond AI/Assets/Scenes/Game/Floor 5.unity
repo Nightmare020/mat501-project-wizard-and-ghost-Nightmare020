@@ -1666,17 +1666,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -7661190978914246283, guid: d3de9ef5c28d4eb4bbb05104040d03a0, type: 3}
   m_PrefabInstance: {fileID: 647071570}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &575003970 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8247115476896266706, guid: cb4b56b360395394186fe0e334865c29, type: 3}
-  m_PrefabInstance: {fileID: 2868455271984291221}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &589229982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3537775897489853637, guid: faff8d7a2fea3614183e94bd4ea13ab8, type: 3}
@@ -4289,6 +4278,17 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &1644487738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3823107202488250768, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+  m_PrefabInstance: {fileID: 2868455271984291221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1731633202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5123617910642259968, guid: f6ef9957dcb67bb40a4f26faca937644, type: 3}
@@ -5481,15 +5481,39 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3823107202488250768, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4903816698657876025, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_text
-      value: 'OH NO! YOUR MASTER IS DEAD!
+      value: 'OH NO! MASTER''S DEAD!
 
-        GET THE KEY AND SAVE HIM!'
+        THE KEY IS NEEDED TO SAVE HIM!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903816698657876025, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903816698657876025, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_margin.z
+      value: -0.000000020011107
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903816698657876025, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5281623093590070048, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 51.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522284080282673502, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 253.5475
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522284080282673502, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.7275
       objectReference: {fileID: 0}
     - target: {fileID: 5828659329681152927, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_Name
@@ -5497,7 +5521,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5828659329681152927, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250440160681794618, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 383.7195
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250440160681794618, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0000023842
       objectReference: {fileID: 0}
     - target: {fileID: 7824901000667354091, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_Pivot.x
@@ -5584,9 +5616,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8019449124394261837, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: startText
+      value: 
+      objectReference: {fileID: 1644487738}
+    - target: {fileID: 8019449124394261837, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: promptText
       value: 
-      objectReference: {fileID: 575003970}
+      objectReference: {fileID: 0}
     - target: {fileID: 8019449124394261837, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: playerImage
       value: 
@@ -5594,7 +5630,7 @@ PrefabInstance:
     - target: {fileID: 8019449124394261837, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: playerCountText
       value: 
-      objectReference: {fileID: 575003970}
+      objectReference: {fileID: 0}
     - target: {fileID: 8019449124394261837, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: playerImages.Array.size
       value: 1
