@@ -212,7 +212,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 17929771
+  m_SortingLayerID: -162605047
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b9b072d192662d349b84d4e84f68e255, type: 3}
@@ -262,6 +262,7 @@ MonoBehaviour:
   keyAnimationStart: {fileID: 5363475466817063880}
   lockObj: {fileID: 1013638632}
   lockGO: {fileID: 6407418166818448555}
+  levelFinish: {fileID: 0}
 --- !u!58 &1426350597
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -349,7 +350,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 944793677
+  m_SortingLayerID: -1939068181
   m_SortingLayer: 10
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8e48fb2bcb56642449f3ec083ab5509c, type: 3}

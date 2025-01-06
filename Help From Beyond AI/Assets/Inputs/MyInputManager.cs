@@ -128,13 +128,13 @@ public class MyInputManager : MonoBehaviour
     public bool AnyInputDetected()
     {
         // Check if any Wizard input action was performed
-        //if (wizard_Move.WasPerformedThisFrame() || wizard_Jump.WasPerformedThisFrame() ||
-        //    wizard_Dash.WasPerformedThisFrame() || wizard_Shoot.WasPerformedThisFrame() ||
-        //    wizard_Aim.WasPerformedThisFrame() || wizard_Pause.WasPerformedThisFrame() ||
-        //    wizard_Interact.WasPerformedThisFrame())
-        //{
-        //    return true;
-        //}
+        if (wizard_Move.WasPerformedThisFrame() || wizard_Jump.WasPerformedThisFrame() ||
+            wizard_Dash.WasPerformedThisFrame() || wizard_Shoot.WasPerformedThisFrame() ||
+            wizard_Aim.WasPerformedThisFrame() || wizard_Pause.WasPerformedThisFrame() ||
+            wizard_Interact.WasPerformedThisFrame())
+        {
+            return true;
+        }
 
         // Check if any Ghost input action was performed
         if (ghost_Move.WasPerformedThisFrame() || ghost_Aim.WasPerformedThisFrame() ||

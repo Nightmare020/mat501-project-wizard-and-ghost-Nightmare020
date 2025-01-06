@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="2021.03.23" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="8" tileheight="8" infinite="1" nextlayerid="8" nextobjectid="121">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="8" tileheight="8" infinite="1" nextlayerid="8" nextobjectid="122">
  <tileset firstgid="1" source="PaletaBuena.tsx"/>
  <layer id="5" name="Background" width="30" height="20" offsetx="-33" offsety="-67">
   <data encoding="csv">
@@ -1346,5 +1346,6 @@
   <object id="118" x="-816" y="360" width="64" height="176"/>
   <object id="119" x="-120" y="360" width="64" height="144"/>
   <object id="120" x="-752" y="360" width="633" height="8"/>
+  <object id="121" x="-816.333" y="504.333" width="762.667" height="32"/>
  </objectgroup>
 </map>

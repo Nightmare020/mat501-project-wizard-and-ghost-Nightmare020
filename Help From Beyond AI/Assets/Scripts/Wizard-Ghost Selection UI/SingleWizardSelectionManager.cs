@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class SingleGhostSelectionManager : MonoBehaviour
+public class SingleWizardSelectionManager : MonoBehaviour
 {
     // Start is called before the first frame update
     private MyInputManager playerInputManager;
@@ -115,8 +115,8 @@ public class SingleGhostSelectionManager : MonoBehaviour
         if (inputEnabled && countPlayer == 1)
         {
             // Set players as ghost
-            playerInputManager.SetInputMap(CurrentInputState.Ghost);
-            playerManager.SetCurrentState(PlayerState.Ghost);
+            playerInputManager.SetInputMap(CurrentInputState.Wizard);
+            playerManager.SetCurrentState(PlayerState.Wizard);
 
             // Hide menu and disable the inputs
             HideUI();

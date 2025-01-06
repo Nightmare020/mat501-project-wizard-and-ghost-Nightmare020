@@ -6,16 +6,16 @@ using UnityEngine.InputSystem;
 public class MyPlayersConnectionManager : MonoBehaviour
 {
     //private List<PlayerInput> players;
-    //[SerializeField] private List<Transform> startingPoints;
+    [SerializeField] private Transform startingPoint;
     private PlayerInputManager _playerInputManager;
-    private SingleGhostSelectionManager _selectionGhostPanel;
+    private SingleWizardSelectionManager _selectionGhostPanel;
 
 
     private void Awake()
     {
         //players = new List<PlayerInput>();
         _playerInputManager = GetComponent<PlayerInputManager>();
-        _selectionGhostPanel = FindObjectOfType<SingleGhostSelectionManager>();
+        _selectionGhostPanel = FindObjectOfType<SingleWizardSelectionManager>();
     }
 
     private void OnEnable()
@@ -35,6 +35,16 @@ public class MyPlayersConnectionManager : MonoBehaviour
     {
         //players.Add(player);
         //player.transform.position = (Vector2)startingPoints[players.Count - 1].position;
+
+        // Set the player's position to the starting point
+        if (startingPoint != null)
+        {
+            player.transform.position = startingPoint.position;
+        }
+        else 
+        {
+            Debug.LogWarning("Starting point not assigned");
+        }
 
         //set on the selection panel the number of players conected
         MyInputManager aux = player.GetComponent<MyInputManager>();

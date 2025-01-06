@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class GhostPlayerInputs : MonoBehaviour
 {
-    private SingleGhostSelectionManager _selectionPanel;
+    private SingleWizardSelectionManager _selectionPanel;
     private MyInputManager _input;
     private int acceptIteration = 0;
 
     private void Awake()
     {
-        _selectionPanel = FindObjectOfType<SingleGhostSelectionManager>();
+        _selectionPanel = FindObjectOfType<SingleWizardSelectionManager>();
         _input = FindObjectOfType<MyInputManager>();
     }
 

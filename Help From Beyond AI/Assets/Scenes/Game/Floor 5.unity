@@ -3461,6 +3461,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: InstanceItem
       objectReference: {fileID: 0}
+    - target: {fileID: 8551692981092829561, guid: 6e71f86e59baecb41b90043b08b383a4, type: 3}
+      propertyPath: m_TagString
+      value: InstanceItem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e71f86e59baecb41b90043b08b383a4, type: 3}
 --- !u!1 &1365110700
@@ -4768,6 +4772,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -3211277176124400524, guid: 45d3e66ea5fb44e42b783679651a8609, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -2745084633883313145, guid: 45d3e66ea5fb44e42b783679651a8609, type: 3}
       propertyPath: m_Color.b
       value: 0.32156864
@@ -4855,6 +4863,10 @@ PrefabInstance:
     - target: {fileID: 3629203943457725375, guid: 45d3e66ea5fb44e42b783679651a8609, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912426031372987714, guid: 45d3e66ea5fb44e42b783679651a8609, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3937976986141451587, guid: 45d3e66ea5fb44e42b783679651a8609, type: 3}
       propertyPath: m_Layer
@@ -4951,6 +4963,10 @@ PrefabInstance:
     - target: {fileID: 7620551367080402971, guid: 45d3e66ea5fb44e42b783679651a8609, type: 3}
       propertyPath: m_Layer
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821490693396200259, guid: 45d3e66ea5fb44e42b783679651a8609, type: 3}
+      propertyPath: m_PolygonShapes.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9183897123764367597, guid: 45d3e66ea5fb44e42b783679651a8609, type: 3}
       propertyPath: m_Layer
@@ -5453,6 +5469,10 @@ PrefabInstance:
       propertyPath: m_text
       value: WIZARD
       objectReference: {fileID: 0}
+    - target: {fileID: 2906189146809619338, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_Name
+      value: You are a wizard text
+      objectReference: {fileID: 0}
     - target: {fileID: 3388837734873455841, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -5460,6 +5480,12 @@ PrefabInstance:
     - target: {fileID: 3388837734873455841, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903816698657876025, guid: cb4b56b360395394186fe0e334865c29, type: 3}
+      propertyPath: m_text
+      value: 'OH NO! YOUR MASTER IS DEAD!
+
+        GET THE KEY AND SAVE HIM!'
       objectReference: {fileID: 0}
     - target: {fileID: 5281623093590070048, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5471,7 +5497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5828659329681152927, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7824901000667354091, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_Pivot.x
@@ -5981,6 +6007,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.14
       objectReference: {fileID: 0}
+    - target: {fileID: 7210494552611625390, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
+      propertyPath: startingPoint
+      value: 
+      objectReference: {fileID: 425171833}
     - target: {fileID: 7210494552611625390, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
       propertyPath: startingPoints.Array.data[0]
       value: 

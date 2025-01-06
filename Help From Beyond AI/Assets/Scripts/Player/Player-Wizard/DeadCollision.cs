@@ -10,5 +10,9 @@ public class DeadCollision : MonoBehaviour
         {
             _wizardValues.Die();
         }
+        else
+        {
+            Debug.Log("No ther enemy found");
+        }
     }
 }
