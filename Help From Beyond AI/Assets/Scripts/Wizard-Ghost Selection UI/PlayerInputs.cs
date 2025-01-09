@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GhostPlayerInputs : MonoBehaviour
+public class PlayerInputs : MonoBehaviour
 {
     private LoadWizardGhost _selectionPanel;
     private MyInputManager _input;

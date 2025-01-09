@@ -6346,6 +6346,10 @@ PrefabInstance:
       value: -1.14
       objectReference: {fileID: 0}
     - target: {fileID: 7210494552611625390, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 2597758119109256577, guid: 0a4216f149961aa4da3bc94d3291c8cb, type: 3}
+    - target: {fileID: 7210494552611625390, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
       propertyPath: startingPoint
       value: 
       objectReference: {fileID: 425171833}

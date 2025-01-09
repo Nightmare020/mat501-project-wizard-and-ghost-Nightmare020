@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class MyPlayersConnectionManager : MonoBehaviour
 {
     //private List<PlayerInput> players;
-    [SerializeField] private Transform startingPoint;
+    [SerializeField] private List<Transform> startingPoints;
+    [SerializeField] private GameObject playerPrefab;
     private PlayerInputManager _playerInputManager;
     private LoadWizardGhost _selectionGhostPanel;
 
@@ -37,9 +38,9 @@ public class MyPlayersConnectionManager : MonoBehaviour
         //player.transform.position = (Vector2)startingPoints[players.Count - 1].position;
 
         // Set the player's position to the starting point
-        if (startingPoint != null)
+        if (startingPoints[0] != null)
         {
-            player.transform.position = startingPoint.position;
+            player.transform.position = startingPoints[0].position;
         }
         else 
         {
