@@ -46,6 +46,8 @@ public class MyInputManager : MonoBehaviour
     private InputAction navigation_Select;
     private InputAction navigation_Return;
     private InputAction navigation_Pause;
+    private InputAction navigation_SelectWizard;
+    private InputAction navigation_SelectGhost;
 
     public bool isMenues;
 
@@ -87,6 +89,8 @@ public class MyInputManager : MonoBehaviour
         navigation_Select = uiNavigationMap.FindAction("Select");
         navigation_Return = uiNavigationMap.FindAction("Return");
         navigation_Pause = uiNavigationMap.FindAction("Pause");
+        navigation_SelectWizard = uiNavigationMap.FindAction("SelectWizard");
+        navigation_SelectGhost = uiNavigationMap.FindAction("SelectGhost");
 
         SetInputMap(_inputMap);
     }
@@ -148,7 +152,8 @@ public class MyInputManager : MonoBehaviour
         if (navigation_Up.WasPerformedThisFrame() || navigation_Down.WasPerformedThisFrame() ||
             navigation_Left.WasPerformedThisFrame() || navigation_Right.WasPerformedThisFrame() ||
             navigation_Select.WasPerformedThisFrame() || navigation_Return.WasPerformedThisFrame() ||
-            navigation_Pause.WasPerformedThisFrame())
+            navigation_Pause.WasPerformedThisFrame() || navigation_SelectWizard.WasPerformedThisFrame() ||
+            navigation_SelectGhost.WasPerformedThisFrame())
         {
             return true;
         }
@@ -192,6 +197,16 @@ public class MyInputManager : MonoBehaviour
     public bool NavigationPause()
     {
         return navigation_Pause.WasPerformedThisFrame();
+    }
+
+    public bool NavigationSelectWizard()
+    {
+        return navigation_SelectWizard.WasPerformedThisFrame();
+    }
+
+    public bool NavigationSelectGhost()
+    {
+        return navigation_SelectGhost.WasPerformedThisFrame();
     }
 
     #endregion

@@ -42,42 +42,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Up",
-                    "type": "Button",
-                    "id": "3ae3470e-4447-4322-8540-f4a66b0db15f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Down",
-                    "type": "Button",
-                    "id": "f1c4b7ee-0a44-428c-af8d-74ca4d3e0f4f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Left",
-                    "type": "Button",
-                    "id": "a7c60965-c4af-4a6d-aac4-1e46cc6a4d30",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Right",
-                    "type": "Button",
-                    "id": "dc642f96-3930-4879-b727-2d23c4453c40",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Aim",
                     "type": "Value",
                     "id": "6ada2a18-042c-4ac7-ab3b-465a4becd94b",
@@ -169,50 +133,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4c83a889-322e-4ca5-839f-e468d8b005dc",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Up",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f9251172-0d81-45e2-adc4-145a5e169339",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Down",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c58cf8e7-f41d-44de-a831-fe24c639be6e",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Left",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fcfa26e2-2609-4941-a85e-25cc344a0e64",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Right",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -312,50 +232,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "090774bf-d87b-46e4-aaee-8ac031e378cf",
-                    "path": "<Gamepad>/dpad/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Up",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3588c888-e2b0-446a-aa5b-8989113aaf54",
-                    "path": "<Gamepad>/dpad/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Down",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0338a73d-d347-4894-8012-184d8d789407",
-                    "path": "<Gamepad>/dpad/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Left",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9bb6f1c0-fab2-4e7c-b310-f0f6bc34791a",
-                    "path": "<Gamepad>/dpad/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Right",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -757,9 +633,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause1",
+                    "name": "SelectWizard",
                     "type": "Button",
-                    "id": "673982c0-9846-4c55-ba47-a9af24cb37a1",
+                    "id": "7bc8a76b-6e69-4b4e-86e6-63fd69343e8e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectGhost",
+                    "type": "Button",
+                    "id": "369273d6-7b94-4796-bb9e-04322bdf1c38",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -934,23 +819,23 @@
                 },
                 {
                     "name": "",
-                    "id": "84e3032f-2b34-4db3-9489-d904b4a2f6d5",
-                    "path": "<Gamepad>/start",
+                    "id": "d9ee2155-4b4e-4e5e-a404-9fecf9bc9254",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause1",
+                    "action": "SelectWizard",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "8db1d961-462b-4e35-9acc-d73773734f1e",
-                    "path": "<Keyboard>/escape",
+                    "id": "94be8996-b44f-4c20-9886-9f5586a007a8",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause1",
+                    "action": "SelectGhost",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

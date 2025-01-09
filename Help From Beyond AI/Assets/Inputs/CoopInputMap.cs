@@ -64,42 +64,6 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Up"",
-                    ""type"": ""Button"",
-                    ""id"": ""3ae3470e-4447-4322-8540-f4a66b0db15f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Down"",
-                    ""type"": ""Button"",
-                    ""id"": ""f1c4b7ee-0a44-428c-af8d-74ca4d3e0f4f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Left"",
-                    ""type"": ""Button"",
-                    ""id"": ""a7c60965-c4af-4a6d-aac4-1e46cc6a4d30"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Right"",
-                    ""type"": ""Button"",
-                    ""id"": ""dc642f96-3930-4879-b727-2d23c4453c40"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Aim"",
                     ""type"": ""Value"",
                     ""id"": ""6ada2a18-042c-4ac7-ab3b-465a4becd94b"",
@@ -191,50 +155,6 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4c83a889-322e-4ca5-839f-e468d8b005dc"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Up"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f9251172-0d81-45e2-adc4-145a5e169339"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Down"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c58cf8e7-f41d-44de-a831-fe24c639be6e"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Left"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fcfa26e2-2609-4941-a85e-25cc344a0e64"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -334,50 +254,6 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Shoot"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""090774bf-d87b-46e4-aaee-8ac031e378cf"",
-                    ""path"": ""<Gamepad>/dpad/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Up"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3588c888-e2b0-446a-aa5b-8989113aaf54"",
-                    ""path"": ""<Gamepad>/dpad/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Down"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0338a73d-d347-4894-8012-184d8d789407"",
-                    ""path"": ""<Gamepad>/dpad/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Left"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9bb6f1c0-fab2-4e7c-b310-f0f6bc34791a"",
-                    ""path"": ""<Gamepad>/dpad/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -779,9 +655,18 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause1"",
+                    ""name"": ""SelectWizard"",
                     ""type"": ""Button"",
-                    ""id"": ""673982c0-9846-4c55-ba47-a9af24cb37a1"",
+                    ""id"": ""7bc8a76b-6e69-4b4e-86e6-63fd69343e8e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectGhost"",
+                    ""type"": ""Button"",
+                    ""id"": ""369273d6-7b94-4796-bb9e-04322bdf1c38"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -956,23 +841,23 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""84e3032f-2b34-4db3-9489-d904b4a2f6d5"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""id"": ""d9ee2155-4b4e-4e5e-a404-9fecf9bc9254"",
+                    ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Pause1"",
+                    ""action"": ""SelectWizard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8db1d961-462b-4e35-9acc-d73773734f1e"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""94be8996-b44f-4c20-9886-9f5586a007a8"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Pause1"",
+                    ""action"": ""SelectGhost"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -987,10 +872,6 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
-        m_Player_Up = m_Player.FindAction("Up", throwIfNotFound: true);
-        m_Player_Down = m_Player.FindAction("Down", throwIfNotFound: true);
-        m_Player_Left = m_Player.FindAction("Left", throwIfNotFound: true);
-        m_Player_Right = m_Player.FindAction("Right", throwIfNotFound: true);
         m_Player_Aim = m_Player.FindAction("Aim", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
@@ -1010,7 +891,8 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
         m_InterfaceNavigation_Select = m_InterfaceNavigation.FindAction("Select", throwIfNotFound: true);
         m_InterfaceNavigation_Return = m_InterfaceNavigation.FindAction("Return", throwIfNotFound: true);
         m_InterfaceNavigation_Pause = m_InterfaceNavigation.FindAction("Pause", throwIfNotFound: true);
-        m_InterfaceNavigation_Pause1 = m_InterfaceNavigation.FindAction("Pause1", throwIfNotFound: true);
+        m_InterfaceNavigation_SelectWizard = m_InterfaceNavigation.FindAction("SelectWizard", throwIfNotFound: true);
+        m_InterfaceNavigation_SelectGhost = m_InterfaceNavigation.FindAction("SelectGhost", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1076,10 +958,6 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Shoot;
-    private readonly InputAction m_Player_Up;
-    private readonly InputAction m_Player_Down;
-    private readonly InputAction m_Player_Left;
-    private readonly InputAction m_Player_Right;
     private readonly InputAction m_Player_Aim;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Interact;
@@ -1091,10 +969,6 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
-        public InputAction @Up => m_Wrapper.m_Player_Up;
-        public InputAction @Down => m_Wrapper.m_Player_Down;
-        public InputAction @Left => m_Wrapper.m_Player_Left;
-        public InputAction @Right => m_Wrapper.m_Player_Right;
         public InputAction @Aim => m_Wrapper.m_Player_Aim;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
@@ -1119,18 +993,6 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
-            @Up.started += instance.OnUp;
-            @Up.performed += instance.OnUp;
-            @Up.canceled += instance.OnUp;
-            @Down.started += instance.OnDown;
-            @Down.performed += instance.OnDown;
-            @Down.canceled += instance.OnDown;
-            @Left.started += instance.OnLeft;
-            @Left.performed += instance.OnLeft;
-            @Left.canceled += instance.OnLeft;
-            @Right.started += instance.OnRight;
-            @Right.performed += instance.OnRight;
-            @Right.canceled += instance.OnRight;
             @Aim.started += instance.OnAim;
             @Aim.performed += instance.OnAim;
             @Aim.canceled += instance.OnAim;
@@ -1156,18 +1018,6 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
-            @Up.started -= instance.OnUp;
-            @Up.performed -= instance.OnUp;
-            @Up.canceled -= instance.OnUp;
-            @Down.started -= instance.OnDown;
-            @Down.performed -= instance.OnDown;
-            @Down.canceled -= instance.OnDown;
-            @Left.started -= instance.OnLeft;
-            @Left.performed -= instance.OnLeft;
-            @Left.canceled -= instance.OnLeft;
-            @Right.started -= instance.OnRight;
-            @Right.performed -= instance.OnRight;
-            @Right.canceled -= instance.OnRight;
             @Aim.started -= instance.OnAim;
             @Aim.performed -= instance.OnAim;
             @Aim.canceled -= instance.OnAim;
@@ -1283,7 +1133,8 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_InterfaceNavigation_Select;
     private readonly InputAction m_InterfaceNavigation_Return;
     private readonly InputAction m_InterfaceNavigation_Pause;
-    private readonly InputAction m_InterfaceNavigation_Pause1;
+    private readonly InputAction m_InterfaceNavigation_SelectWizard;
+    private readonly InputAction m_InterfaceNavigation_SelectGhost;
     public struct InterfaceNavigationActions
     {
         private @CoopInputMap m_Wrapper;
@@ -1295,7 +1146,8 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
         public InputAction @Select => m_Wrapper.m_InterfaceNavigation_Select;
         public InputAction @Return => m_Wrapper.m_InterfaceNavigation_Return;
         public InputAction @Pause => m_Wrapper.m_InterfaceNavigation_Pause;
-        public InputAction @Pause1 => m_Wrapper.m_InterfaceNavigation_Pause1;
+        public InputAction @SelectWizard => m_Wrapper.m_InterfaceNavigation_SelectWizard;
+        public InputAction @SelectGhost => m_Wrapper.m_InterfaceNavigation_SelectGhost;
         public InputActionMap Get() { return m_Wrapper.m_InterfaceNavigation; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1326,9 +1178,12 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
-            @Pause1.started += instance.OnPause1;
-            @Pause1.performed += instance.OnPause1;
-            @Pause1.canceled += instance.OnPause1;
+            @SelectWizard.started += instance.OnSelectWizard;
+            @SelectWizard.performed += instance.OnSelectWizard;
+            @SelectWizard.canceled += instance.OnSelectWizard;
+            @SelectGhost.started += instance.OnSelectGhost;
+            @SelectGhost.performed += instance.OnSelectGhost;
+            @SelectGhost.canceled += instance.OnSelectGhost;
         }
 
         private void UnregisterCallbacks(IInterfaceNavigationActions instance)
@@ -1354,9 +1209,12 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
-            @Pause1.started -= instance.OnPause1;
-            @Pause1.performed -= instance.OnPause1;
-            @Pause1.canceled -= instance.OnPause1;
+            @SelectWizard.started -= instance.OnSelectWizard;
+            @SelectWizard.performed -= instance.OnSelectWizard;
+            @SelectWizard.canceled -= instance.OnSelectWizard;
+            @SelectGhost.started -= instance.OnSelectGhost;
+            @SelectGhost.performed -= instance.OnSelectGhost;
+            @SelectGhost.canceled -= instance.OnSelectGhost;
         }
 
         public void RemoveCallbacks(IInterfaceNavigationActions instance)
@@ -1380,10 +1238,6 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
-        void OnUp(InputAction.CallbackContext context);
-        void OnDown(InputAction.CallbackContext context);
-        void OnLeft(InputAction.CallbackContext context);
-        void OnRight(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
@@ -1405,6 +1259,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
         void OnSelect(InputAction.CallbackContext context);
         void OnReturn(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
-        void OnPause1(InputAction.CallbackContext context);
+        void OnSelectWizard(InputAction.CallbackContext context);
+        void OnSelectGhost(InputAction.CallbackContext context);
     }
 }
