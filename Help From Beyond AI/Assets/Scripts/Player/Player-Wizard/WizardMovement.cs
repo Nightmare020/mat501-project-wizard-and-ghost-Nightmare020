@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -30,7 +31,11 @@ public class WizardMovement : MonoBehaviour
         _inputs = GetComponentInParent<MyInputManager>();
     }
 
-
+    public void Initialize(WizardValues values)
+    {
+        _wizardValues = values;
+    }
+    
     private void FixedUpdate()
     {
         if (jumping && _inputs.WizardJumpPressed() && _wizardValues.rigidBody.velocity.y > 0)
@@ -245,5 +250,58 @@ public class WizardMovement : MonoBehaviour
                 _wizardValues.animationManager.SetJoystickMultiplier(horizontalVelocity);
             }
         }
+    }
+
+    public void AIMove(Vector2 direction)
+    {
+        if (direction == Vector2.zero) return;
+
+        float speed;
+
+        if (_wizardValues.IsGrounded())
+        {
+            speed = _wizardValues.moveSpeed;
+
+        }
+        else
+        {
+            speed = _wizardValues.moveSpeed / 4;
+        }
+
+        _wizardValues.rigidBody.AddForce(direction.normalized * speed - _wizardValues.rigidBody.velocity);
+    }
+
+    public void AIJump()
+    {
+        if (_wizardValues.IsGrounded())
+        {
+            _wizardValues.rigidBody.velocity = new Vector2(_wizardValues.rigidBody.velocity.x, 0);
+            _wizardValues.rigidBody.AddForce(Vector2.up * _wizardValues.jumpForce, ForceMode2D.Impulse);
+        }
+    }
+
+    public void AIDoubleJump()
+    {
+        if (!_wizardValues.doubleJumpPerformed)
+        {
+            _wizardValues.rigidBody.velocity = new Vector2(_wizardValues.rigidBody.velocity.x, 0);
+            _wizardValues.rigidBody.AddForce(Vector2.up * _wizardValues.jumpForce, ForceMode2D.Impulse);
+            _wizardValues.doubleJumpPerformed = true;
+        }
+    }
+
+    public void AIDash()
+    {
+        if (_wizardValues.IsGrounded())
+        {
+            _wizardValues.rigidBody.velocity = Vector2.zero;
+            _wizardValues.rigidBody.AddForce(Vector2.right * _wizardValues.facingDirection * _wizardValues.dashForce,
+                ForceMode2D.Impulse);
+        }
+    }
+
+    public void AIShoot(Vector2 direction)
+    {
+
     }
 }

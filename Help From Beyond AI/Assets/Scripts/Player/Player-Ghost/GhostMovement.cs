@@ -33,6 +33,11 @@ public class GhostMovement : MonoBehaviour
         _objectHeight = _ghostValues.spriteRenderer.bounds.extents.y; //extents = size of height / 2
     }
 
+    public void Initialize(GhostValues values)
+    {
+        _ghostValues = values;
+    }
+
     private void FixedUpdate()
     {
         // Fly
@@ -120,4 +125,13 @@ public class GhostMovement : MonoBehaviour
         //Gizmos.DrawSphere(new Vector3(_lowerBound.x, _lowerBound.y, 0), 1);
     }
 
+    public void AIMove(Vector2 direction)
+    {
+        _ghostValues.rigidBody.velocity = direction.normalized * _ghostValues.moveSpeed;
+    }
+
+    public void PlaceTrampoline(Vector2 position)
+    {
+        
+    }
 }

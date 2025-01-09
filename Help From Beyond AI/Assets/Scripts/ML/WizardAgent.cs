@@ -10,9 +10,13 @@ public class WizardAgent : Agent
     private WizardMovement _movement;
     private WizardValues _values;
     [SerializeField] GameObject MyKey; // Key the wizard picks up
+    [SerializeField] private Transform Ghost;
+    [SerializeField] Transform Door;
     [SerializeField] bool IHaveAKey; // Wizard has key or not
     private Rigidbody2D _rigidBody;
-    
+    private Transform _currentTarget;
+    private HepFromBeyondEnvController _gameController;
+
 
     // Initialize is called before the first frame update
     public override void Initialize()
@@ -20,28 +24,105 @@ public class WizardAgent : Agent
         _movement = GetComponent<WizardMovement>();
         _values = GetComponent<WizardValues>();
         _rigidBody = _values.rigidBody;
+        _gameController = FindObjectOfType<HepFromBeyondEnvController>();
+        MyKey.SetActive(false);
+        IHaveAKey = false;
+    }
 
+    public override void OnEpisodeBegin()
+    {
         MyKey.SetActive(false);
         IHaveAKey = false;
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        base.CollectObservations(sensor);
+        sensor.AddObservation(transform.position); // Wizard's position
+        sensor.AddObservation(MyKey.transform.position); // Key's position
+        sensor.AddObservation(Door.position); // Door's position
+        sensor.AddObservation(Ghost.position); // Ghost's companion position
+        sensor.AddObservation(IHaveAKey ? 1f : 0f); // Key possesion
     }
 
     public override void OnActionReceived(ActionBuffers actions)
     {
-        base.OnActionReceived(actions);
+        // Determine the current target
+        if (!IHaveAKey)
+        {
+            MoveTowards(MyKey.transform.position);
+        }
+        else
+        {
+            MoveTowards(Door.position);
+        }
+
+        DetectAndHandleEnemies();
+        HandleWallsAndPlatforms();
     }
 
-    public override void Heuristic(in ActionBuffers actionsOut)
+    private void MoveTowards(Vector3 target)
     {
-        base.Heuristic(actionsOut);
+        Vector2 direction = (target - transform.position).normalized;
+        _movement.AIMove(direction);
+
+        if (ShouldJump(target))
+        {
+            _movement.AIJump();
+        }
     }
 
-    private void ShootSpell()
+    private bool ShouldJump(Vector3 target)
     {
+        return target.y > transform.position.y + 1f && _values.IsGrounded();
+    }
 
+    private void DetectAndHandleEnemies()
+    {
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, 5f, LayerMask.GetMask("Enemies"));
+
+        foreach (Collider2D enemy in enemies)
+        {
+            Vector2 directionToEnemy = (enemy.transform.position - transform.position).normalized;
+            _movement.AIShoot(directionToEnemy);
+            AddReward(0.5f); // Reward for shooting an enemy
+        }
+    }
+
+    private void HandleWallsAndPlatforms()
+    {
+        RaycastHit2D wallCheck = Physics2D.Raycast(transform.position, Vector2.right * _values.facingDirection, 1f, LayerMask.GetMask("Walls"));
+
+        if (wallCheck.collider != null)
+        {
+            AddReward(-0.2f); // penalize for hitting a wall
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("key"))
+        {
+            MyKey.SetActive(true);
+            IHaveAKey = true;
+            collision.gameObject.SetActive(false);
+            AddReward(1f); // reward for picking up the key
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("lock") && IHaveAKey)
+        {
+            MyKey.SetActive(false);
+            IHaveAKey = false;
+            _gameController.UnlockDoor();
+            AddReward(5f);
+        }
+        else if (collision.transform.CompareTag("Lava"))
+        {
+            // Penalize for collision with spikes
+            AddReward(-1);
+            _gameController.WizardDied();
+        }
     }
 }

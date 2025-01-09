@@ -7,6 +7,8 @@ public enum PlayerState
 {
     Wizard,
     Ghost,
+    WizardAI,
+    GhostAI,
     Dead
 }
 
