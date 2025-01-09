@@ -265,10 +265,10 @@ public class ArcadeManager : MonoBehaviour
         _emerginPointsPool.GetText().StartPoints(timeText.transform.position, "+" + 5);
         timer.SubtractTime(5);
 
-        if (ghostPoints % 10 == 0)
-        {
-            _enemyManager.IncreaseDifficultyWizard();
-        }
+        //if (ghostPoints % 10 == 0)
+        //{
+        //    _enemyManager.IncreaseDifficultyWizard();
+        //}
 
         if (AllCoinsCollected(ghostCoins))
         {

@@ -8,14 +8,14 @@ public class MyPlayersConnectionManager : MonoBehaviour
     //private List<PlayerInput> players;
     [SerializeField] private Transform startingPoint;
     private PlayerInputManager _playerInputManager;
-    private SingleWizardSelectionManager _selectionGhostPanel;
+    private LoadWizardGhost _selectionGhostPanel;
 
 
     private void Awake()
     {
         //players = new List<PlayerInput>();
         _playerInputManager = GetComponent<PlayerInputManager>();
-        _selectionGhostPanel = FindObjectOfType<SingleWizardSelectionManager>();
+        _selectionGhostPanel = FindObjectOfType<LoadWizardGhost>();
     }
 
     private void OnEnable()

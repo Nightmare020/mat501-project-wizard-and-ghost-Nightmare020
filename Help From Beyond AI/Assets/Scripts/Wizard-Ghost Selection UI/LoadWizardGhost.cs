@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class SingleWizardSelectionManager : MonoBehaviour
+public class LoadWizardGhost : MonoBehaviour
 {
     // Start is called before the first frame update
     private MyInputManager playerInputManager;

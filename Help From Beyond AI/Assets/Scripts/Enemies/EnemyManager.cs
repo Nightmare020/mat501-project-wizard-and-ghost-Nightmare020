@@ -7,13 +7,13 @@ namespace Enemies
 {
     public class EnemyManager : MonoBehaviour
     {
-        [SerializeField] private GameObject wizzardEnemy, GhostEnemy, spawnsGhostEnemies, spawnsWizzardEnemies;
+        [SerializeField] private GameObject GhostEnemy, spawnsGhostEnemies;
 
         private List<PlayerEnemy> _playerEnemies;
         private List<GhostEnemy> _ghostEnemies;
 
-        [SerializeField] private int maxGhostEnemies = 2, maxWizzardEnemies = 2;
-        private List<Transform> wizzardEnemiesSpawnPoints, ghostEnemiesSpawnPoints;
+        [SerializeField] private int maxGhostEnemies = 2;
+        private List<Transform> ghostEnemiesSpawnPoints;
 
         [SerializeField] private float minSpawnDistance;
 
@@ -22,9 +22,9 @@ namespace Enemies
             _playerEnemies = new List<PlayerEnemy>();
             _ghostEnemies = new List<GhostEnemy>();
 
-            wizzardEnemiesSpawnPoints = new List<Transform>();
-            wizzardEnemiesSpawnPoints.AddRange(spawnsWizzardEnemies.GetComponentsInChildren<Transform>());
-            wizzardEnemiesSpawnPoints.Remove(spawnsWizzardEnemies.transform);
+            //wizardEnemiesSpawnPoints = new List<Transform>();
+            //wizardEnemiesSpawnPoints.AddRange(spawnsWizardEnemies.GetComponentsInChildren<Transform>());
+            //wizardEnemiesSpawnPoints.Remove(spawnsWizardEnemies.transform);
 
             ghostEnemiesSpawnPoints = new List<Transform>();
             ghostEnemiesSpawnPoints.AddRange(spawnsGhostEnemies.GetComponentsInChildren<Transform>());
@@ -57,39 +57,39 @@ namespace Enemies
 
 
             //wizzard enemies
-            enemiesSpawned = 0;
-            enemiesToSpawn = maxWizzardEnemies - _playerEnemies.Count;
-            while (enemiesSpawned < enemiesToSpawn)
-            {
-                Transform spawnPoint = wizzardEnemiesSpawnPoints[Random.Range(0, wizzardEnemiesSpawnPoints.Count)];
-                Transform closestWizzardEnemy = GetClosestWizzardEnemy(spawnPoint.position);
-                if (closestWizzardEnemy == null || (closestWizzardEnemy != null &&
-                                                    Vector2.Distance(spawnPoint.position,
-                                                        closestWizzardEnemy.transform.position) > minSpawnDistance))
-                {
-                    GameObject newWizzard = Instantiate(wizzardEnemy, transform);
-                    newWizzard.transform.position = spawnPoint.position;
-                    _playerEnemies.Add(newWizzard.GetComponent<PlayerEnemy>());
-                    enemiesSpawned++;
-                }
-            }
+            //enemiesSpawned = 0;
+            //enemiesToSpawn = maxWizardEnemies - _playerEnemies.Count;
+            //while (enemiesSpawned < enemiesToSpawn)
+            //{
+            //    Transform spawnPoint = wizardEnemiesSpawnPoints[Random.Range(0, wizardEnemiesSpawnPoints.Count)];
+            //    Transform closestWizzardEnemy = GetClosestWizzardEnemy(spawnPoint.position);
+            //    if (closestWizzardEnemy == null || (closestWizzardEnemy != null &&
+            //                                        Vector2.Distance(spawnPoint.position,
+            //                                            closestWizzardEnemy.transform.position) > minSpawnDistance))
+            //    {
+            //        GameObject newWizzard = Instantiate(wizardEnemy, transform);
+            //        newWizzard.transform.position = spawnPoint.position;
+            //        _playerEnemies.Add(newWizzard.GetComponent<PlayerEnemy>());
+            //        enemiesSpawned++;
+            //    }
+            //}
         }
 
         public void IncreaseDifficulty()
         {
-            IncreaseDifficultyWizard();
+            //IncreaseDifficultyWizard();
             IncreaseDifficultyGhost();
         }
 
-        public void IncreaseDifficultyWizard()
-        {
-            maxWizzardEnemies = Mathf.Max(1, (int)(maxWizzardEnemies * 2f));
-            SpawnEnemies();
-            foreach (var enemy in _playerEnemies)
-            {
-                enemy.IncreaseDifficulty();
-            }
-        }
+        //public void IncreaseDifficultyWizard()
+        //{
+        //    maxWizardEnemies = Mathf.Max(1, (int)(maxWizardEnemies * 2f));
+        //    SpawnEnemies();
+        //    foreach (var enemy in _playerEnemies)
+        //    {
+        //        enemy.IncreaseDifficulty();
+        //    }
+        //}
 
         public void IncreaseDifficultyGhost()
         {

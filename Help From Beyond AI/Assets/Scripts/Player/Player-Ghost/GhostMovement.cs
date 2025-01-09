@@ -10,10 +10,10 @@ public class GhostMovement : MonoBehaviour
     private BoxCollider2D _ghostCollider;
     private LayerMask _wallCollisionLayer;
 
-    //private Vector2 _upperBound;
-    //private Vector2 _lowerBound;
-    //private float _objectWidth;
-    //private float _objectHeight;
+    private Vector2 _upperBound;
+    private Vector2 _lowerBound;
+    private float _objectWidth;
+    private float _objectHeight;
 
 
     private float speed = 0;
@@ -22,15 +22,15 @@ public class GhostMovement : MonoBehaviour
     {
         _ghostValues = GetComponent<GhostValues>();
         _inputs = GetComponentInParent<MyInputManager>();
-        //_screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height) * 0.5f);
+        _screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height) * 0.5f);
 
         // get ghost collider and assign the wall collision layer
         _ghostCollider = GetComponent<BoxCollider2D>();
         _wallCollisionLayer = LayerMask.GetMask("Wall");
 
-        //_screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        //_objectWidth = _ghostValues.spriteRenderer.bounds.extents.x; //extents = size of width / 2
-        //_objectHeight = _ghostValues.spriteRenderer.bounds.extents.y; //extents = size of height / 2
+        _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        _objectWidth = _ghostValues.spriteRenderer.bounds.extents.x; //extents = size of width / 2
+        _objectHeight = _ghostValues.spriteRenderer.bounds.extents.y; //extents = size of height / 2
     }
 
     private void FixedUpdate()
@@ -85,18 +85,18 @@ public class GhostMovement : MonoBehaviour
         return new Vector2(direction.x, direction.y);
     }
 
-    //void LateUpdate()
-    //{
-    //    _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-    //    Vector3 viewPos = transform.root.position;
+    void LateUpdate()
+    {
+        _screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        Vector3 viewPos = transform.root.position;
 
-    //    _upperBound = new Vector2(_screenBounds.x - _objectWidth, _screenBounds.y - _objectHeight);
-    //    _lowerBound = new Vector2(_screenBounds.x - ((_screenBounds.x - Camera.main.transform.position.x) * 2) + _objectWidth, _screenBounds.y - ((_screenBounds.y - Camera.main.transform.position.y) * 2) + _objectHeight);
+        _upperBound = new Vector2(_screenBounds.x - _objectWidth, _screenBounds.y - _objectHeight);
+        _lowerBound = new Vector2(_screenBounds.x - ((_screenBounds.x - Camera.main.transform.position.x) * 2) + _objectWidth, _screenBounds.y - ((_screenBounds.y - Camera.main.transform.position.y) * 2) + _objectHeight);
 
-    //    viewPos.x = Mathf.Clamp(viewPos.x, _screenBounds.x - ((_screenBounds.x - Camera.main.transform.position.x) * 2) + _objectWidth, _screenBounds.x - _objectWidth);
-    //    viewPos.y = Mathf.Clamp(viewPos.y, _screenBounds.y - ((_screenBounds.y - Camera.main.transform.position.y) * 2) + _objectHeight, _screenBounds.y - _objectHeight);
-    //    transform.root.position = viewPos;
-    //}
+        viewPos.x = Mathf.Clamp(viewPos.x, _screenBounds.x - ((_screenBounds.x - Camera.main.transform.position.x) * 2) + _objectWidth, _screenBounds.x - _objectWidth);
+        viewPos.y = Mathf.Clamp(viewPos.y, _screenBounds.y - ((_screenBounds.y - Camera.main.transform.position.y) * 2) + _objectHeight, _screenBounds.y - _objectHeight);
+        transform.root.position = viewPos;
+    }
 
     private bool IsCollidingWithWalls(Vector2 targetPosition)
     {
