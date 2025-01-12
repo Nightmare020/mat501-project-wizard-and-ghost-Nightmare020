@@ -22,6 +22,11 @@ public class MyPlayersConnectionManager : MonoBehaviour
 
     private void Start()
     {
+        InitializeCharacters();
+    }
+
+    private void InitializeCharacters()
+    {
         if (playerPrefab != null)
         {
             // Instantiate and configure wizard
