@@ -412,7 +412,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""6f722534-cd98-4b93-b75d-d850185db74f"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -423,7 +423,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""0a9d748a-4dc4-4621-870b-dea3781eb870"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -434,7 +434,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""ab66f250-493a-4eb3-9c53-5945dec7777c"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -445,7 +445,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""f713004b-61d4-422b-b95e-aea7d360f936"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -467,7 +467,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c8bda77b-e665-48e2-875c-bd4ccf8443b2"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/u"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -478,7 +478,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""569faacb-43e6-4fdc-a1dc-1827c07e644c"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -533,7 +533,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""ba35e5d4-f76c-42ab-9c64-16a384c2e31d"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/t"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -544,7 +544,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""83b2f851-aab4-443b-a827-add0a61c3e8e"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""path"": ""<Keyboard>/g"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -555,7 +555,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""f65b7272-0d4b-4a9c-8edf-ac1bb540ff2e"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -566,7 +566,7 @@ public partial class @CoopInputMap: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""6fd260d2-5c88-4b30-b280-496ac2191bb4"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Keyboard>/h"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

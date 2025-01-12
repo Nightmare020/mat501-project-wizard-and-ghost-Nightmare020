@@ -60,10 +60,11 @@ public class LoadWizardGhost : MonoBehaviour
 
         //playerManagers.Add(playerInputManager.transform.GetComponent<PlayerManager>());
 
-        playerInputManager = inputManager;
-        playerManager = inputManager.transform.GetComponent<PlayerManager>();
-        playerImage.color = Color.green;
-        startText.text = "START TRAINING!";
+        //playerInputManager = inputManager;
+        //playerManager = inputManager.transform.GetComponent<PlayerManager>();
+
+        //playerImage.color = Color.green;
+        //startText.text = "START TRAINING!";
 
         //update the player count
         //SetPlayerCountText();
@@ -88,9 +89,9 @@ public class LoadWizardGhost : MonoBehaviour
         //        playerRolPosition[i] = 0;
         //    }
 
-        playerInputManager = null;
-        playerManager = null;
-        playerImage.color = Color.white;
+        //playerInputManager = null;
+        //playerManager = null;
+        //playerImage.color = Color.white;
 
         //    //update the player count
         //    ShowUI();
@@ -111,8 +112,8 @@ public class LoadWizardGhost : MonoBehaviour
         if (inputEnabled)
         {
             // Set players as ghost
-            playerInputManager.SetInputMap(CurrentInputState.Wizard);
-            playerManager.SetCurrentState(PlayerState.Wizard);
+            //playerInputManager.SetInputMap(CurrentInputState.Wizard);
+            //playerManager.SetCurrentState(PlayerState.Wizard);
 
             // Hide menu and disable the inputs
             HideUI();
@@ -148,10 +149,13 @@ public class LoadWizardGhost : MonoBehaviour
     {
         if (show)
         {
+            playerImage.color = Color.green;
+            startText.text = "START TRAINING!";
             acceptImageCanvas.alpha = 1;
         }
         else 
-        { 
+        {
+            playerImage.color = Color.white;
             acceptImageCanvas.alpha = 0;
         }
 

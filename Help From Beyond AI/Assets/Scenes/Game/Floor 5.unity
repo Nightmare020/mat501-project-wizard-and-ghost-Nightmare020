@@ -5906,7 +5906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5828659329681152927, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6250440160681794618, guid: cb4b56b360395394186fe0e334865c29, type: 3}
       propertyPath: m_SizeDelta.x
@@ -6453,6 +6453,22 @@ PrefabInstance:
       propertyPath: startingPoint
       value: 
       objectReference: {fileID: 425171833}
+    - target: {fileID: 7210494552611625390, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
+      propertyPath: startingPointGhost
+      value: 
+      objectReference: {fileID: 246114820}
+    - target: {fileID: 7210494552611625390, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
+      propertyPath: ghostStartingPoints
+      value: 
+      objectReference: {fileID: 246114820}
+    - target: {fileID: 7210494552611625390, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
+      propertyPath: startingPointWizard
+      value: 
+      objectReference: {fileID: 346795719}
+    - target: {fileID: 7210494552611625390, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
+      propertyPath: wizardStartingPoints
+      value: 
+      objectReference: {fileID: 346795719}
     - target: {fileID: 7210494552611625390, guid: 311beab0d5ca1864da93c72666d687e3, type: 3}
       propertyPath: startingPoints.Array.data[0]
       value: 

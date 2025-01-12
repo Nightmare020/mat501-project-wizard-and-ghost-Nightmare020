@@ -90,6 +90,28 @@ public class PlayerManager : MonoBehaviour
                 ghost.SetActive(true);
                 dead.SetActive(false);
                 break;
+            case PlayerState.WizardAI:
+                currentState = playerState;
+                tag = "Wizard";
+                _rigidBody2D.simulated = playerState == PlayerState.Wizard;
+                _rigidBody2D.gravityScale = playerState == PlayerState.Wizard ? 1 : 0;
+                isDead = false;
+                wizard.SetActive(true);
+                ghost.SetActive(false);
+                dead.SetActive(false);
+                cameraFollow.m_Target = transform;
+                break;
+            case PlayerState.GhostAI:
+                currentState = playerState;
+                tag = "Ghost";
+                _rigidBody2D.simulated = playerState == PlayerState.Ghost; ;
+                _rigidBody2D.gravityScale = 0;
+                _rigidBody2D.drag = 1f;
+                isDead = false;
+                wizard.SetActive(false);
+                ghost.SetActive(true);
+                dead.SetActive(false);
+                break;
             case PlayerState.Dead:
                 isDead = true;
                 _rigidBody2D.simulated = false;

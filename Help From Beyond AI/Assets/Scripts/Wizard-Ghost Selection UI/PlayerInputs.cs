@@ -21,6 +21,7 @@ public class PlayerInputs : MonoBehaviour
             // SHow accept image when any input is detected
             if (_input.AnyInputDetected())
             {
+
                 _selectionPanel.UpdateAcceptImage(true);
                 acceptIteration++;
             }

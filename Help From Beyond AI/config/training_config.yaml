@@ -1,0 +1,44 @@
+behaviors:
+  WizardAgent:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 512
+      buffer_size: 20480
+      learning_rate: 0.0003
+      beta: 0.005
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+    network_settings:
+      normalize: true
+      hidden_units: 128
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        strength: 1.0
+        gamma: 0.99
+    max_steps: 500000
+    time_horizon: 64
+    summary_freq: 1000
+    
+    GhostAgent:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 512
+      buffer_size: 20480
+      learning_rate: 0.0003
+      beta: 0.005
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+    network_settings:
+      normalize: true
+      hidden_units: 128
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        strength: 1.0
+        gamma: 0.99
+    max_steps: 500000
+    time_horizon: 64
+    summary_freq: 1000

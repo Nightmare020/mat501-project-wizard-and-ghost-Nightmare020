@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class MyPlayersConnectionManager : MonoBehaviour
 {
     //private List<PlayerInput> players;
-    [SerializeField] private List<Transform> startingPoints;
+    [SerializeField] private Transform startingPointWizard;
+    [SerializeField] private Transform startingPointGhost;
     [SerializeField] private GameObject playerPrefab;
     private PlayerInputManager _playerInputManager;
     private LoadWizardGhost _selectionGhostPanel;
@@ -17,6 +18,28 @@ public class MyPlayersConnectionManager : MonoBehaviour
         //players = new List<PlayerInput>();
         _playerInputManager = GetComponent<PlayerInputManager>();
         _selectionGhostPanel = FindObjectOfType<LoadWizardGhost>();
+    }
+
+    private void Start()
+    {
+        if (playerPrefab != null)
+        {
+            // Instantiate and configure wizard
+            GameObject wizardObject = Instantiate(playerPrefab, startingPointWizard.position, Quaternion.identity);
+            PlayerManager wizardManager = wizardObject.GetComponent<PlayerManager>();
+            wizardManager.SetCurrentState(PlayerState.WizardAI);
+
+            // Instantiate and configure ghost
+            GameObject ghostObject = Instantiate(playerPrefab, startingPointGhost.position, Quaternion.identity);
+            PlayerManager ghostManager = ghostObject.GetComponent<PlayerManager>();
+            ghostManager.SetCurrentState(PlayerState.GhostAI);
+
+            Debug.Log("Both Wizard and Ghost have been initialized.");
+        }
+        else
+        {
+            Debug.LogError("Player Prefab is not assigned.");
+        }
     }
 
     private void OnEnable()
@@ -38,9 +61,9 @@ public class MyPlayersConnectionManager : MonoBehaviour
         //player.transform.position = (Vector2)startingPoints[players.Count - 1].position;
 
         // Set the player's position to the starting point
-        if (startingPoints[0] != null)
+        if (startingPointWizard != null)
         {
-            player.transform.position = startingPoints[0].position;
+            player.transform.position = startingPointWizard.position;
         }
         else 
         {
