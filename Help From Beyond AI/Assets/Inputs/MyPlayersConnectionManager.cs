@@ -61,14 +61,14 @@ public class MyPlayersConnectionManager : MonoBehaviour
         //player.transform.position = (Vector2)startingPoints[players.Count - 1].position;
 
         // Set the player's position to the starting point
-        if (startingPointWizard != null)
-        {
-            player.transform.position = startingPointWizard.position;
-        }
-        else 
-        {
-            Debug.LogWarning("Starting point not assigned");
-        }
+        //if (startingPointWizard != null)
+        //{
+        //    player.transform.position = startingPointWizard.position;
+        //}
+        //else 
+        //{
+        //    Debug.LogWarning("Starting point not assigned");
+        //}
 
         //set on the selection panel the number of players conected
         MyInputManager aux = player.GetComponent<MyInputManager>();
