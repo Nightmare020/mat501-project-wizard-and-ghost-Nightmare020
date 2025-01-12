@@ -24,14 +24,12 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private WizardAnimationManager _wizardAnimationManager;
     public PlayerManager otherPlayer;
     public bool isDead = false;
-    private ArcadeManager _arcadeManager;
     [NonSerialized] public SoundManager _soundManager;
     [SerializeField] private SpriteRenderer _spriteRendererWizard;
 
     private void Start()
     {
         _soundManager = GetComponentInParent<SoundManager>();
-        _arcadeManager = FindObjectOfType<ArcadeManager>();
         _camera = Camera.main;
         cameraShake = _camera.GetComponent<CameraShake>();
         cameraFollow = _camera.GetComponent<CameraFollow>();
@@ -133,14 +131,7 @@ public class PlayerManager : MonoBehaviour
         if (GetOtherPlayer() != null && GetOtherPlayer().GetComponent<PlayerManager>().isDead)
         {
             //game over
-            if (_arcadeManager)
-            {
-                _arcadeManager.GameOver();
-            }
-            else
-            {
-                MySceneLoader.LoadMainMenu();
-            }
+            MySceneLoader.LoadMainMenu();
         }
         else
         {
@@ -153,14 +144,8 @@ public class PlayerManager : MonoBehaviour
         if (GetOtherPlayer() != null && GetOtherPlayer().GetComponent<PlayerManager>().isDead)
         {
             //game over
-            if (_arcadeManager)
-            {
-                _arcadeManager.GameOver();
-            }
-            else
-            {
-                MySceneLoader.LoadMainMenu();
-            }
+
+            MySceneLoader.LoadMainMenu();
         }
         else
         {
