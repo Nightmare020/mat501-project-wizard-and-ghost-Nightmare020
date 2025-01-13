@@ -38,10 +38,11 @@ public class WizardAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.position); // Wizard's position
-        sensor.AddObservation(MyKey.transform.position); // Key's position
+        sensor.AddObservation(MyKey ? MyKey.transform.position : Vector3.zero); // Key's position
         sensor.AddObservation(Door.position); // Door's position
         sensor.AddObservation(Ghost.position); // Ghost's companion position
         sensor.AddObservation(IHaveAKey ? 1f : 0f); // Key possesion
+        sensor.AddObservation(DetectEnemies()); // Nearby enemies
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -56,8 +57,8 @@ public class WizardAgent : Agent
             MoveTowards(Door.position);
         }
 
-        DetectAndHandleEnemies();
-        HandleWallsAndPlatforms();
+        HandleEnemyInteractions();
+        HandleObstacles();
     }
 
     private void MoveTowards(Vector3 target)
@@ -76,19 +77,66 @@ public class WizardAgent : Agent
         return target.y > transform.position.y + 1f && _values.IsGrounded();
     }
 
-    private void DetectAndHandleEnemies()
+    private float DetectEnemies()
     {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, 5f, LayerMask.GetMask("Enemies"));
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, 10f, LayerMask.GetMask("Enemies"));
+        return enemies.Length > 0 ? 1f : 0f;
+    }
+
+    private void HandleEnemyInteractions()
+    {
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, 10f, LayerMask.GetMask("Enemies"));
 
         foreach (Collider2D enemy in enemies)
         {
             Vector2 directionToEnemy = (enemy.transform.position - transform.position).normalized;
-            _movement.AIShoot(directionToEnemy);
-            AddReward(0.5f); // Reward for shooting an enemy
+            float dotProduct = Vector2.Dot(directionToEnemy, transform.right);
+
+            GhostEnemy ghostEnemy = enemy.GetComponent<GhostEnemy>();
+
+            if (ghostEnemy != null)
+            {
+                if (dotProduct > 0f)
+                {
+                    ghostEnemy.Stop();
+                }
+                else
+                {
+                    ghostEnemy.Resume();
+                }
+            }
         }
     }
 
-    private void HandleWallsAndPlatforms()
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.CompareTag("Enemy"))
+        {
+            GhostEnemy ghostEnemy = other.transform.GetComponent<GhostEnemy>();
+
+            if (ghostEnemy != null)
+            {
+                ghostEnemy.Die();
+                AddReward(1.0f); // Reward for killing an enemy
+            }
+        }
+
+        if (other.transform.CompareTag("Lock") && IHaveAKey)
+        {
+            MyKey.SetActive(false);
+            IHaveAKey = false;
+            _gameController.UnlockDoor();
+            AddReward(5f);
+        }
+        else if (other.transform.CompareTag("Lava"))
+        {
+            // Penalize for collision with spikes
+            AddReward(-1);
+            _gameController.WizardDied();
+        }
+    }
+
+    private void HandleObstacles()
     {
         RaycastHit2D wallCheck = Physics2D.Raycast(transform.position, Vector2.right * _values.facingDirection, 1f, LayerMask.GetMask("Walls"));
 
@@ -100,7 +148,7 @@ public class WizardAgent : Agent
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("key"))
+        if (collision.CompareTag("Key"))
         {
             MyKey.SetActive(true);
             IHaveAKey = true;
@@ -109,20 +157,15 @@ public class WizardAgent : Agent
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public override void Heuristic(in ActionBuffers actionsOut)
     {
-        if (collision.transform.CompareTag("lock") && IHaveAKey)
-        {
-            MyKey.SetActive(false);
-            IHaveAKey = false;
-            _gameController.UnlockDoor();
-            AddReward(5f);
-        }
-        else if (collision.transform.CompareTag("Lava"))
-        {
-            // Penalize for collision with spikes
-            AddReward(-1);
-            _gameController.WizardDied();
-        }
+        var continuousActions = actionsOut.ContinuousActions;
+        var discreteActions = actionsOut.DiscreteActions;
+
+        Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), 0);
+        continuousActions[0] = direction.x; // Horizontal movement
+
+        discreteActions[0] = Input.GetKey(KeyCode.Space) ? 1 : 0; // Jump
+        discreteActions[1] = Input.GetKey(KeyCode.LeftShift) ? 1 : 0; // Dash
     }
 }

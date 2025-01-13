@@ -22,6 +22,8 @@ public class WizardMovement : MonoBehaviour
     //dash timer
     private MyStopwatch dashTimer;
 
+    // Toggle for AI vs Input control
+    [SerializeField] private bool useAIControl = false;
 
     private void Start()
     {
@@ -38,6 +40,11 @@ public class WizardMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
+        if (useAIControl)
+        {
+            return;
+        }
+
         if (jumping && _inputs.WizardJumpPressed() && _wizardValues.rigidBody.velocity.y > 0)
         {
             _wizardValues.rigidBody.AddForce(Vector2.up * _wizardValues.jumpOnAirForce);
@@ -93,6 +100,11 @@ public class WizardMovement : MonoBehaviour
 
     private void Update()
     {
+        if (useAIControl)
+        {
+            return;
+        }
+
         //jump
         if (_inputs.WizardJumpPerformedThisFrame() && _wizardValues.IsGrounded())
         {
@@ -256,12 +268,13 @@ public class WizardMovement : MonoBehaviour
     {
         if (direction == Vector2.zero) return;
 
-        float speed;
-
         if (_wizardValues.IsGrounded())
         {
             speed = _wizardValues.moveSpeed;
-
+        }
+        else if (_wizardValues.rigidBody.velocity.y > 0)
+        {
+            speed = _wizardValues.moveSpeed / 2;
         }
         else
         {
@@ -269,6 +282,7 @@ public class WizardMovement : MonoBehaviour
         }
 
         _wizardValues.rigidBody.AddForce(direction.normalized * speed - _wizardValues.rigidBody.velocity);
+        UpdateFacingDirection(direction);
     }
 
     public void AIJump()
@@ -277,6 +291,7 @@ public class WizardMovement : MonoBehaviour
         {
             _wizardValues.rigidBody.velocity = new Vector2(_wizardValues.rigidBody.velocity.x, 0);
             _wizardValues.rigidBody.AddForce(Vector2.up * _wizardValues.jumpForce, ForceMode2D.Impulse);
+            jumping = true;
         }
     }
 
@@ -292,16 +307,41 @@ public class WizardMovement : MonoBehaviour
 
     public void AIDash()
     {
-        if (_wizardValues.IsGrounded())
+        if (!dashPerformed && _wizardValues.IsGrounded())
         {
-            _wizardValues.rigidBody.velocity = Vector2.zero;
-            _wizardValues.rigidBody.AddForce(Vector2.right * _wizardValues.facingDirection * _wizardValues.dashForce,
-                ForceMode2D.Impulse);
+            _cameraShake.Shake(0.1f, 0.1f);
+            _wizardValues.rigidBody.velocity *= new Vector2(0, 1);
+            dashTimer.Restart();
+            dashPerformed = true;
+            _wizardValues.rigidBody.AddForce(new Vector2(_wizardValues.facingDirection, 0) * _wizardValues.dashForce, ForceMode2D.Impulse);
+            StartCoroutine(SlowTheDash());
         }
     }
 
-    public void AIShoot(Vector2 direction)
+    public void HandleObstacle(Vector2 obstacleDirection)
     {
+        // If blocked, jump or use the ghost to double jump
+        if (_wizardValues.IsGrounded())
+        {
+            AIJump();
+        }
+        else if (!_wizardValues.doubleJumpPerformed)
+        {
+            AIDoubleJump();
+        }
+    }
 
+    private void UpdateFacingDirection(Vector2 direction)
+    {
+        if (direction.x > 0)
+        {
+            _wizardValues.facingDirection = 1;
+            _wizardValues.WizardSpriteRenderer.flipX = false;
+        }
+        else if (direction.x < 0)
+        {
+            _wizardValues.facingDirection = -1;
+            _wizardValues.WizardSpriteRenderer.flipX = true;
+        }
     }
 }

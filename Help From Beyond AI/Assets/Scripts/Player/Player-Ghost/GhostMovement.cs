@@ -18,6 +18,9 @@ public class GhostMovement : MonoBehaviour
 
     private float speed = 0;
 
+    // Toggle for AI vs Input control
+    [SerializeField] private bool useAIControl = false;
+
     private void Start()
     {
         _ghostValues = GetComponent<GhostValues>();
@@ -40,6 +43,11 @@ public class GhostMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (useAIControl)
+        {
+            return;
+        }
+
         // Fly
         if (MoveDirectionVectorNormalized() != Vector2.zero)
         {
@@ -125,13 +133,28 @@ public class GhostMovement : MonoBehaviour
         //Gizmos.DrawSphere(new Vector3(_lowerBound.x, _lowerBound.y, 0), 1);
     }
 
-    public void AIMove(Vector2 direction)
+    public void AIMove(Vector2 targetPosition)
     {
-        _ghostValues.rigidBody.velocity = direction.normalized * _ghostValues.moveSpeed;
+        Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+        float speed = _ghostValues.moveSpeed;
+
+        _ghostValues.rigidBody.AddForce(direction * speed - _ghostValues.rigidBody.velocity);
     }
 
     public void PlaceTrampoline(Vector2 position)
     {
-        
+        // Trampoline prefab logic
+        GameObject trampolinePrefab = Resources.Load<GameObject>("Prefabs/Trampoline");
+
+        if (trampolinePrefab != null)
+        {
+            GameObject trampoline = Instantiate(trampolinePrefab, position, Quaternion.identity);
+            Rigidbody2D trampolineRb = trampoline.GetComponent<Rigidbody2D>();
+
+            if (trampolineRb != null)
+            {
+                trampolineRb.velocity = Vector2.zero;
+            }
+        }
     }
 }

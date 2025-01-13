@@ -29,7 +29,7 @@ public class LoadWizardGhost : MonoBehaviour
         //playerManagers = new List<PlayerManager>();
         _canvasGroup = GetComponent<CanvasGroup>();
         //originalImageX = playerImages[0].transform.position.x;
-        UpdateAcceptImage(false);
+        //UpdateAcceptImage(false);
     }
 
     public void ShowUI()
@@ -38,7 +38,7 @@ public class LoadWizardGhost : MonoBehaviour
         _canvasGroup.interactable = true;
         _canvasGroup.blocksRaycasts = true;
         inputEnabled = true;
-        UpdateAcceptImage(false);
+        //UpdateAcceptImage(false);
     }
 
     public void HideUI()
@@ -106,23 +106,23 @@ public class LoadWizardGhost : MonoBehaviour
 
     #region player inputs
 
-    public void PlayerAccept()
-    {
-        // Ensure a player is connected
-        if (inputEnabled)
-        {
-            // Set players as ghost
-            //playerInputManager.SetInputMap(CurrentInputState.Wizard);
-            //playerManager.SetCurrentState(PlayerState.Wizard);
+    //public void PlayerAccept()
+    //{
+    //    // Ensure a player is connected
+    //    if (inputEnabled)
+    //    {
+    //        // Set players as ghost
+    //        //playerInputManager.SetInputMap(CurrentInputState.Wizard);
+    //        //playerManager.SetCurrentState(PlayerState.Wizard);
 
-            // Hide menu and disable the inputs
-            HideUI();
-            print("Game Started");
+    //        // Hide menu and disable the inputs
+    //        HideUI();
+    //        print("Game Started");
 
-            //SetWizardOrGhost(0);
-            //SetWizardOrGhost(1);
-        }
-    }
+    //        //SetWizardOrGhost(0);
+    //        //SetWizardOrGhost(1);
+    //    }
+    //}
 
     //public void SelectLeft(MyInputManager myInputManager)
     //{
@@ -145,29 +145,29 @@ public class LoadWizardGhost : MonoBehaviour
     #endregion
 
 
-    public void UpdateAcceptImage(bool show)
-    {
-        if (show)
-        {
-            playerImage.color = Color.green;
-            startText.text = "START TRAINING!";
-            acceptImageCanvas.alpha = 1;
-        }
-        else 
-        {
-            playerImage.color = Color.white;
-            acceptImageCanvas.alpha = 0;
-        }
+    //public void UpdateAcceptImage(bool show)
+    //{
+    //    if (show)
+    //    {
+    //        playerImage.color = Color.green;
+    //        startText.text = "START TRAINING!";
+    //        acceptImageCanvas.alpha = 1;
+    //    }
+    //    else
+    //    {
+    //        playerImage.color = Color.white;
+    //        acceptImageCanvas.alpha = 0;
+    //    }
 
-        //if (players.Count == 2 && inputEnabled && playerRolPosition[0] * playerRolPosition[1] == -1)
-        //{
-        //    ShowAcceptText();
-        //}
-        //else
-        //{
-        //    HideAcceptText();
-        //}
-    }
+    //    if (players.Count == 2 && inputEnabled && playerRolPosition[0] * playerRolPosition[1] == -1)
+    //    {
+    //        ShowAcceptText();
+    //    }
+    //    else
+    //    {
+    //        HideAcceptText();
+    //    }
+    //}
 
     //public void ShowAcceptText()
     //{

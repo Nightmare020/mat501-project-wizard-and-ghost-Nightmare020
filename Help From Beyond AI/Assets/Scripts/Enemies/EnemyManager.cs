@@ -95,7 +95,7 @@ namespace Enemies
         {
             maxGhostEnemies = Mathf.Max(1, (int)(maxGhostEnemies * 2f));
             SpawnEnemies();
-            foreach (var enemy in _ghostEnemies)
+            foreach (GhostEnemy enemy in _ghostEnemies)
             {
                 enemy.IncreaseDifficulty();
             }

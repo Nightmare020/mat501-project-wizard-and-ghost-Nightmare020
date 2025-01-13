@@ -49,13 +49,13 @@ public class MyPlayersConnectionManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerInputManager.onPlayerJoined += AddPlayer;
+        //_playerInputManager.onPlayerJoined += AddPlayer;
         //_playerInputManager.onPlayerLeft += PlayerLeft;
     }
 
     private void OnDisable()
     {
-        _playerInputManager.onPlayerJoined -= AddPlayer;
+        //_playerInputManager.onPlayerJoined -= AddPlayer;
         //_playerInputManager.onPlayerLeft -= PlayerLeft;
     }
 
@@ -76,8 +76,8 @@ public class MyPlayersConnectionManager : MonoBehaviour
         //}
 
         //set on the selection panel the number of players conected
-        MyInputManager aux = player.GetComponent<MyInputManager>();
-        _selectionGhostPanel.AddPlayer(aux);
+        //MyInputManager aux = player.GetComponent<MyInputManager>();
+        //_selectionGhostPanel.AddPlayer(aux);
     }
 
     //private void PlayerLeft(PlayerInput player)

@@ -109,15 +109,45 @@ public class GhostAgent : Agent
         }
     }
 
-
-
-    private void PlaceTrampoline()
+    public override void Heuristic(in ActionBuffers actionsOut)
     {
-        
-    }
+        var continuousActions = actionsOut.ContinuousActions;
 
-    private void ToggleSpecialVision()
-    {
-        
+        // Manual movement controls
+        Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+
+        // If no manual input, use AIMove logic
+        if (direction == Vector2.zero && Wizard != null)
+        {
+            direction = (Wizard.position - transform.position).normalized;
+        }
+
+        // Apply movement
+        continuousActions[0] = direction.x; // Horizontal
+        continuousActions[1] = direction.y; // Vertical
+
+        // Optional: Place trampoline with heuristic
+        if (Input.GetKey(KeyCode.T))
+        {
+            RaycastHit2D barrierCheck = Physics2D.Raycast(transform.position, Vector2.right, 5f, LayerMask.GetMask("Barriers"));
+
+            if (barrierCheck.collider != null)
+            {
+                _movement.PlaceTrampoline(barrierCheck.point); // Place trampoline
+                AddReward(1f); // Reward for placing trampoline
+                Debug.Log("Heuristic: Placed trampoline");
+            }
+        }
+
+        // Optional: Assist the wizard in jumping (double jump)
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (Vector3.Distance(transform.position, Wizard.position) < 2f && !Wizard.GetComponent<WizardValues>().doubleJumpPerformed)
+            {
+                Wizard.GetComponent<WizardMovement>().AIDoubleJump(); // Trigger double jump
+                AddReward(1f); // Reward for assisting
+                Debug.Log("Heuristic: Assisted wizard with double jump");
+            }
+        }
     }
 }

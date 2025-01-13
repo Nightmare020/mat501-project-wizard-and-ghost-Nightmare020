@@ -22,14 +22,14 @@ public class PlayerInputs : MonoBehaviour
             if (_input.AnyInputDetected())
             {
 
-                _selectionPanel.UpdateAcceptImage(true);
+                //_selectionPanel.UpdateAcceptImage(true);
                 acceptIteration++;
             }
 
             // Confirm
             if (_input.NavigationSelect() && acceptIteration > 1)
             {
-                _selectionPanel.PlayerAccept();
+                //_selectionPanel.PlayerAccept();
             }
 
             //left 
