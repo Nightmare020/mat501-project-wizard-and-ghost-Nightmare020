@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1736730732",
+        "python_version": "3.8.10 (tags/v3.8.10:3d8993a, May  3 2021, 11:48:03) [MSC v.1928 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\Alejandro\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python38\\Scripts\\mlagents-learn training_config.yaml --run-id==WizardGhostTraining --env==UnityEditor --force --no-graphics",
+        "mlagents_version": "0.28.0",
+        "mlagents_envs_version": "0.28.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "2.4.1+cu118",
+        "numpy_version": "1.19.5",
+        "end_time_seconds": "1736730735"
+    },
+    "total": 2.7863387,
+    "count": 1,
+    "self": 0.0035412999999997474,
+    "children": {
+        "run_training.setup": {
+            "total": 0.16939539999999997,
+            "count": 1,
+            "self": 0.16939539999999997
+        },
+        "TrainerController.start_learning": {
+            "total": 2.6134020000000002,
+            "count": 1,
+            "self": 0.00022890000000108657,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 2.6131675999999997,
+                    "count": 1,
+                    "self": 2.6131675999999997
+                },
+                "trainer_threads": {
+                    "total": 4.999999996257998e-07,
+                    "count": 1,
+                    "self": 4.999999996257998e-07
+                },
+                "TrainerController._save_models": {
+                    "total": 4.999999999810711e-06,
+                    "count": 1,
+                    "self": 4.999999999810711e-06
+                }
+            }
+        }
+    }
+}
